@@ -1,0 +1,19 @@
+@use '../styles/variables' as v;
+
+.container {
+  padding-top: 35px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+
+body {
+ @include v.ColorBGradient();
+ font-family: v.$font-family;
+ width: 100vw;
+ height: 100vh;
+}
+
+

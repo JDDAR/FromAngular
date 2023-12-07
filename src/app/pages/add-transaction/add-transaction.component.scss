@@ -1,0 +1,130 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/cards' as c;
+@use '../../../styles.scss';
+@use '../../../styles/input' as i;
+@use '../../../styles/buttom' as b;
+
+.addContainer {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20vh;
+}
+.add-transaction {
+  @include c.cardContainer();
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: v.$color-font-primary;
+  width: 80%;
+  h2 {
+    padding-bottom: 25px;
+    width: 100%;
+    border-bottom: 1px solid v.$color-font-primary;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+  }
+  input, select {
+    width: 100%;
+  }
+  &__amountContainer {
+    position: relative;
+    display: grid;
+    align-items: center;
+  }
+  &__amount {
+    color: v.$color-font-primary;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    @include i.inputOne();
+  }
+  &__type {
+    display: flex;
+    gap: 25px;
+
+  }
+  &__category,
+  &__date{
+    color: v.$color-font-primary;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    @include i.inputTwo();
+  }
+
+  &__selectContainer {
+    position: relative;
+    display: grid;
+    align-items: center;
+  }
+
+  &__category {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+  }
+
+  option {
+  color: v.$color-font-primary;
+  background-color: v.$color-BG-solid-one;
+  }
+
+  &__submitContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  button {
+    width: 50%;
+    font-size: 1rem;
+    color: v.$color-font-primary;
+    @include b.buttonPrimary();
+  }
+  a {
+    font-weight: 500;
+    text-decoration: none;
+    color: v.$color-font-primary;
+    cursor: pointer;
+    padding: 25px;
+    &:hover {
+      color: v.$color-font-red;
+    }
+  }
+
+  input.ng-invalid.ng-touched,
+  select.ng-invalid.ng-touched{
+    border: 1px solid v.$color-font-red;
+  }
+
+  &__error-message {
+    background: v.$color-BG-error;
+    color: v.$color-font-primary;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-style: italic;
+    right: 0;
+    position: absolute;
+    right: -180px;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+}

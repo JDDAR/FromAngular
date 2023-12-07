@@ -1,0 +1,29 @@
+@if(balance){
+<section class="container">
+  <div class="cardContainer">
+    <div class="balance">
+      <header class="balance__header">
+        <h4>Total Balance</h4>
+        <h2>{{balance.amount | currency }}</h2>
+      </header>
+      <article class="balance__info">
+        <div>
+          <h4>Income</h4>
+          <h3>{{balance.income | currency}}</h3>
+        </div>
+        <div>
+          <h4>Exenses</h4>
+          <h3>{{balance.expenses | currency}}</h3>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+} @else{
+<div class="cardContainer">
+  <h3 class="no-balance__error">No balance available</h3>
+</div>
+}
+

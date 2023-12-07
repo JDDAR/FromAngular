@@ -1,0 +1,23 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles.scss' as s;
+@use '../../../styles/buttom'as b;
+
+.transactions {
+  width: 50vw;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    align-items: end;
+    h3 {
+      color: v.$color-font-primary;
+      font-weight: 500;
+    }
+    a {
+      @include b.buttonPrimary();
+      text-decoration: none;
+      color: v.$color-font-primary;
+    }
+  }
+
+}

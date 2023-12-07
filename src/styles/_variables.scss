@@ -1,0 +1,27 @@
+@use 'fonts';
+
+$font-family : 'Inter', sans-serif;
+
+//Colors
+
+$color-font-primary: #f1faee;
+$color-buttom-bg-primary: rgba(1, 22, 76, 0.11);
+$color-font-red: rgba(232,71,71,0.90);
+
+
+$income-icon-bg-color: rgba(23, 185, 185, 0.58) ;
+$expense-icon-bg-color: rgba(232, 71, 71, 0.57) ;
+
+$color-BG-solid-one: rgba(71, 16, 105, 5);
+$color-BG-error:  rgba(232,71,71,0.90);
+
+
+// strokes
+
+$border-solid-primary:  1px solid rgba(255, 255, 255, 0.2);
+
+// Color gradient  background
+
+@mixin ColorBGradient() {
+background: linear-gradient(286deg, #30C5D2 -6.37%, #471069 100.99%);
+}

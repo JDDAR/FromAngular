@@ -1,0 +1,50 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/cards' as c;
+
+.cardContainer {
+  @include c.cardContainer();
+  height: auto;
+  width: 90vw;
+  max-width: 50vw;
+  color: v.$color-font-primary;
+  margin-bottom: 25px;
+  .balance {
+    font-family: v.$font-family;
+    display: flex;
+    flex-direction: column;
+    &__header {
+      text-align: center;
+      border-bottom: v.$border-solid-primary;
+      padding: 35px 0px;
+      h4 {
+        font-weight: 200;
+        font-size: 0.75em;
+      }
+      h2 {
+        font-size: 3rem;
+        font-weight: 600;
+      }
+    }
+    &__info {
+      padding: 25px 0px;
+      display: flex;
+      justify-content: space-between;
+      h4 {
+        font-weight: 200;
+        font-size: 0.75rem;
+      }
+      h3 {
+        font-size: 1.75rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+.no-balance__error {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  color: red;
+
+}
+

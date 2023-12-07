@@ -1,0 +1,39 @@
+<section class="containerTransaction">
+  <div class="transaction">
+    <div class="transaction__title">
+        <span class="material-symbols-outlined transaction__remove"
+        (click) = "removeHandler()"
+        >
+        delete
+      </span>
+      @switch(transaction.type) {
+      @case("income") {
+      <div class="transaction__icon transaction__icon-income">&#24;</div>
+      }
+      @case("expense"){
+      <div class="transaction__icon transaction__icon-expenses">&#25;</div>
+      }
+      }
+      <h5>
+        {{transaction.category}}
+      </h5>
+
+
+    </div>
+    <div class="transaction__info">
+      <h5
+        class="transaction__amount"
+        [ngClass] = "
+          transaction.type === 'expense'
+          ? ' transaction__amount-expense'
+          : ' transaction__amount-income'
+        "
+        >
+        {{transaction.amount | currency}}
+      </h5>
+
+
+        <h5 class="transaction__date">{{transaction.date | date}}</h5>
+    </div>
+  </div>
+</section>

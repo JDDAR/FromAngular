@@ -1,0 +1,17 @@
+<section class="container">
+  <div class="transactions">
+    <div class="transactions__header">
+      <h3>TRANSACTION</h3>
+      <a routerLink="add">Add</a>
+    </div>
+    @for(transaction of transactions; track transaction.id) {
+    <app-transaction
+      [transaction] = 'transaction'
+      (removeTransactionEvent)="removeTransaction($event)"
+      />
+      }@empty {
+      <h3 class="transaction__empty">No Transactions</h3>
+      }
+  </div>
+</section>
+

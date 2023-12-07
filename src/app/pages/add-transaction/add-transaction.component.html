@@ -1,0 +1,59 @@
+<section class="addContainer"  >
+  <div class="add-transaction">
+    <h2>ADD TRANSACTION</h2>
+    <form
+      class="add-transaction__form"
+      autocomplete="off"
+      [formGroup] = "addTransactionForm"
+      (ngSubmit) = "onSubmit()"
+      >
+      <div class="add-transaction__amountContainer">
+        <input
+        type="number"
+        id="amount"
+        class="add-transaction__amount"
+        formControlName = 'amount'>
+
+        @if(addTransactionForm.get("amount")?.invalid && addTransactionForm.get("amount")?.touched ) {
+
+        @if(addTransactionForm.get("amount")?.errors?.["required"]) {
+        <span class="add-transaction__error-message">Amount required</span>
+        }
+
+        @if(addTransactionForm.get("amount")?.errors?.["pattern"]) {
+        <span class="add-transaction__error-message">Valid number required</span>
+        }
+        }
+
+      </div>
+      <div class="add-transaction__type">
+        <input type="radio" id="expense" name="type" value="expense" formControlName = 'type'>
+        <label for="expense">Expense</label>
+        <input type="radio" id="income" name="type" value="income" formControlName = 'type'>
+        <label for="income">Income</label>
+      </div>
+      <div class="add-transaction__selectContainer">
+        <select class="add-transaction__category" name="category" id="category" formControlName = 'category'>
+          <option value=""> Select your category </option>
+          <option value="food">Food</option>
+          <option value="shopping">Shopping</option>
+          <option value="entertaiment">Entertaiment</option>
+          <option value="payrooll">Payrooll</option>
+        </select>
+        @if(addTransactionForm.get("category")?.invalid && addTransactionForm.get("category")?.touched ) {
+
+        @if(addTransactionForm.get("category")?.errors?.["required"]) {
+        <span class="add-transaction__error-message">Select you category</span>
+        }
+        }
+      </div>
+
+      <input class="add-transaction__date" type="date" id="date" formControlName = 'date'>
+
+      <div class="add-transaction__submitContainer">
+        <button type="submit">Save</button>
+        <a routerLink="/" >Cancelar</a>
+      </div>
+    </form>
+  </div>
+</section>
